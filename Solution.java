@@ -1,47 +1,29 @@
-//Given a string s, find the length of the longest substring without repeating characters.
-//know first string then start checking next find it it's findig sent its length location
 class Solution {
     public static void main(String[] args) {
-    // String s = "abcabcbb";
-    String s = "    ";
-      System.out.println(lengthOfLongestSubstring(s));
-    }
+        int[][] matrix = {  
 
-    static  int lengthOfLongestSubstring(String s) {
-    int length = 0 ;
-    
-    for (int start =0 ;start<s.length(); start++){
-   
-        if(start > 0 ){
-            return lengthoflongestsub(s);
-        }
-
-        for(int end = start+1; end<s.length(); end++){
-            if(s.charAt(start) != s.charAt(end)){
-                end++;
-            }else{
-                length = end - start;
-                return length;
-            }
-        }
-    }
-    return 1;
+            {1,5,9},
+            {10,11,12},
+            {12,13,15}
+        };
+        
+       System.out.println(kthSmallest(matrix, 8));
     }
     
-    static int lengthoflongestsub(String s){
-        int length = 0;
-        for (int start =0 ;start<s.length(); start++){
-            for(int end = start+1; end<s.length(); end++){
-                if(s.charAt(start) != s.charAt(end)){
-                    end++;
-                }else{
-                    length = end - start;
-                    
-                }
+public static int kthSmallest(int[][] matrix, int k) {
+    int ans= 0;
+    int count = 0;
+    for(int i = 0; i < matrix.length; i++) {
+        int j = 0;
+        while(j < matrix[i].length){
+            if(count==k){
+              return  matrix[i][j];
             }
-        }
-        return length;   
-    }
+        j++; count++;    
+        }  
 
+    }
+   return ans;
+}
 
 }

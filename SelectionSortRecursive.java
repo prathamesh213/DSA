@@ -17,7 +17,7 @@ public class SelectionSortRecursive {
         
         
         int maxIndex = 0;
-        for(int i = 1; i<arrlength; i++){
+        for(int i = 0; i<=arrlength-1; i++){
             if(arr[i] > arr[maxIndex]){
                 maxIndex = i;
             }
