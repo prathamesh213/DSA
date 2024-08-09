@@ -1,29 +1,22 @@
-class Solution {
+/**
+ * "Reverse a String"
+ */
+public class Solution {
+
     public static void main(String[] args) {
-        int[][] matrix = {  
-
-            {1,5,9},
-            {10,11,12},
-            {12,13,15}
-        };
-        
-       System.out.println(kthSmallest(matrix, 8));
+        String str = "pawarprathamesh";
+        reverseString("", str);
     }
+  
+    static void reverseString(String p , String up){
     
-public static int kthSmallest(int[][] matrix, int k) {
-    int ans= 0;
-    int count = 0;
-    for(int i = 0; i < matrix.length; i++) {
-        int j = 0;
-        while(j < matrix[i].length){
-            if(count==k){
-              return  matrix[i][j];
-            }
-        j++; count++;    
-        }  
+    if(up.length() == 1) {
+        return;
+    }
+      int n = up.length() -1;  
+      char ch = up.charAt(n);
+
+      reverseString(p + ch, up.substring(1, n));
 
     }
-   return ans;
-}
-
 }
